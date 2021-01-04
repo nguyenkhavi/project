@@ -9,9 +9,6 @@ export default function Time(){
     const today = time + '-' + mm + '/' + dd + '/' + yyyy;
 
 
-    console.log("time render", today)
-    console.log(new Date())
-
     return (
         <div className='time'>{today}</div>
     )

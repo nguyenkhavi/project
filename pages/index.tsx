@@ -4,6 +4,7 @@ import Main from '../components/main'
 import Time from '../components/time'
 
 export default function Home() {
+  
   return (
     <div className={styles.container}>
       <Head>

@@ -3,10 +3,13 @@ import ActiveCountry from '../ActiveCountry'
 import Header from '../header'
 import { Button } from "@chakra-ui/react"
 import { Select } from "@chakra-ui/react"
+import Loading from '../Loading'
 
 
 export default function Main(){
     const [data, setData] = useState([])
+
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const requestUrl = 'https://corona.lmao.ninja/v2/countries'
@@ -14,20 +17,28 @@ export default function Main(){
         return (response.json());
         }).then((data) => {  
             setData(data)
+            console.log('isLoading before setIsLoading:', isLoading )
+            setIsLoading(false)
+            console.log('isLoading after setIsLoading:', isLoading )
+    
+       
         })
     },[])
+
+
     const vn = data[214]
     const [active, setActive] = useState(false)
-
+    console.log('isLoading:', isLoading )
     return (
         <>
         <Header/>
-        <div className='main'>
+        {isLoading && <Loading/>}
+        {!isLoading && <div className='main'>
                 <div >
                     {active && <ActiveCountry activeCountry={active}/>}
                 </div>
                 <div className='table'>
-                    <div className='table-header'>LIST OF COUNTRIES OF THE WORLD</div>
+                    <div className='table-header'>LIST OF COUNTRIES OF THE WORLD {console.log('isLoading in header:', isLoading )}</div>
                     <div className='row'>
                         <div >COUNTRY</div>
                         <div >COMTINENTS</div>
@@ -43,7 +54,7 @@ export default function Main(){
                         )}
                     </ul>
                 </div>
-        </div>
+        </div>}
         </>
     )
 }
