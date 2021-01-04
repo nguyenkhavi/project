@@ -17,10 +17,7 @@ export default function Main(){
         return (response.json());
         }).then((data) => {  
             setData(data)
-            console.log('isLoading before setIsLoading:', isLoading )
-            setIsLoading(false)
-            console.log('isLoading after setIsLoading:', isLoading )
-    
+            setIsLoading(false)    
        
         })
     },[])
@@ -28,7 +25,6 @@ export default function Main(){
 
     const vn = data[214]
     const [active, setActive] = useState(false)
-    console.log('isLoading:', isLoading )
     return (
         <>
         <Header/>
@@ -38,7 +34,7 @@ export default function Main(){
                     {active && <ActiveCountry activeCountry={active}/>}
                 </div>
                 <div className='table'>
-                    <div className='table-header'>LIST OF COUNTRIES OF THE WORLD {console.log('isLoading in header:', isLoading )}</div>
+                    <div className='table-header'>LIST OF COUNTRIES OF THE WORLD</div>
                     <div className='row'>
                         <div >COUNTRY</div>
                         <div >COMTINENTS</div>
