@@ -1,13 +1,15 @@
 import {useState, useEffect} from 'react'
+import getToday from '../../helpers/getToday'
 
 export default function Time(){
-    var date = new Date();
-    var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = String(date.getFullYear());
-    var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    const today = time + '-' + mm + '/' + dd + '/' + yyyy;
+    const tempToday = getToday()
+    const [today, setToday] = useState(tempToday)
 
+    useEffect(() => {
+        setInterval(() => {
+            setToday(getToday())
+        },1000)
+    },[today])
 
     return (
         <div className='time'>{today}</div>
