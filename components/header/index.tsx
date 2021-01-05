@@ -1,8 +1,9 @@
 
-export default function Header(){
+
+export default function Header({isMobile}){
     return (
         <>
-            <div className="header">COVID-19 CORONAVIRUS PANDEMIC</div>
+            <div className={isMobile ? "header" : "header"}>COVID-19 CORONAVIRUS PANDEMIC</div>
         </>
     )
 }
