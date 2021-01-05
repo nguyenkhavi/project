@@ -8,11 +8,11 @@ import Mobile from '../components/Mobile'
 
 
 export default function Home() {
-  
+  const Mobi = isMobile()
 
   return (
     <>
-    {isMobile() ? <Mobile/>
+    {Mobi ? <Mobile/>
     : <div className={styles.container}>
       <Head>
         <title>Covid-19 Statistics</title>
