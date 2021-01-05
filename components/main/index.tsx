@@ -23,10 +23,9 @@ export default function Main({isMobile}){
     },[])
 
 
-
     return (
         <>
-        <Header isMobile={isMobile}/>
+        <Header />
         {isLoading && <Loading/>}
 
         {!isLoading && <div className='main'>
@@ -35,8 +34,7 @@ export default function Main({isMobile}){
                             </div>
 
 
-
-                            {!isMobile && <div className='table'>
+                            {(<div className='table'>
                                 <div className='table-header'>LIST OF COUNTRIES OF THE WORLD</div>
                                 <div className='row'>
                                     <div >COUNTRY</div>
@@ -44,15 +42,15 @@ export default function Main({isMobile}){
                                     <div >INFO</div>
                                 </div>
                                 <ul>
-                                    {data.map(country => 
-                                    <li className='row' key={country.countryInfo.iso3} >
+                                    {data.map((country, idx) => 
+                                    <li className='row' key={`${country.countryInfo.iso3}-${idx}`} >
                                         <div>{country.country}</div>
                                         <div>{country.continent}</div>
                                         <div className='btn'><Button onClick={() => setActive(country)}>Details</Button></div>
                                     </li> 
                                     )}
                                 </ul>
-                            </div>}
+                            </div>)}
 
 
                         </div>}
