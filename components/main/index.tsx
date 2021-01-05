@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import ActiveCountry from '../ActiveCountry'
-import Header from '../Header'
+import Header from '../header'
 import { Button } from "@chakra-ui/react"
 import Loading from '../Loading'
 
