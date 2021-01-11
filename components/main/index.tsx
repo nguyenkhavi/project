@@ -70,10 +70,10 @@ export default function Main({isMobile}){
                         <div className='table-header'>LIST OF COUNTRIES OF THE WORLD</div>
                         <div className='row'>
                             <div >COUNTRIES
-                                <Input onChange={handleChangeCountry} placeholder="Enter country" />
+                                <Input onChange={handleChangeCountry} placeholder="Search a country" />
                             </div>
                             <div >COMTINENTS
-                                <Input onChange={handleChangeContinent} placeholder="Enter continent" />
+                                <Input onChange={handleChangeContinent} placeholder="Search a continent" />
                             </div>
                             <div >INFO
                             </div>
