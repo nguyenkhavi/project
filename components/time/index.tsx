@@ -5,6 +5,7 @@ export default function Time() {
     const [today, setToday] = useState('')
 
     useEffect(() => {
+        setToday(getToday)
         const t = setInterval(() => {
             setToday(getToday())
         },1000)

@@ -11,7 +11,7 @@ export default function Home() {
   const Mobi = isMobile()
 
   return (
-    <>
+    <div className="full">
     {Mobi ? <Mobile/>
     : <div className={styles.container}>
       <Head>
@@ -21,6 +21,6 @@ export default function Home() {
       <Main isMobile={Mobile}/>
       <Time/>
     </div>}
-    </>
+    </div>
   )
 }
